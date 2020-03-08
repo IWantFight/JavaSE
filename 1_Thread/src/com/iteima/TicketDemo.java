@@ -30,7 +30,7 @@ public class TicketDemo {
     }
 }
 class Ticket implements Runnable{
-    private int ticket = 100;
+    private int ticket = 10;
     @Override
     public void run() {
         while (true){
