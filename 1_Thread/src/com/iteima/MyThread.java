@@ -19,7 +19,9 @@ package com.iteima;
 
 3、Thread类的相关方法：
     start、run、String getName()、setName()、static Thread currentThread()
-    static void yeild、join()、static void sleep(long millis)
+    static void yeild(释放当前线程的执行权)、join(在线程a中使用b线程调用join方法，
+    那么在b线程结束之前，a线程都不会被执行)
+    static void sleep(long millis)
     boolean isAlive();
 
 注意：1）、每多创建一个线程，就要重新创建一个Thread子类对象.单个对象多次
@@ -40,7 +42,6 @@ public class MyThread {
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0) {
                 System.out.println(i + "main");
-
             }
         }
     }

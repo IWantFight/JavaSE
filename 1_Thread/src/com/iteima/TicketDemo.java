@@ -27,6 +27,12 @@ public class TicketDemo {
             t2.start();
             t3.start();
         }
+        new Thread(new Ticket()){
+            @Override
+            public void run(){
+                System.out.println("匿名函数构建线程4");
+            }
+        }.start();
     }
 }
 class Ticket implements Runnable{
