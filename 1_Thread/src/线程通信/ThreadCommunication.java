@@ -25,7 +25,7 @@ class MyThread implements Runnable {
         while (true) {
             //这里千万切记，如果是Thread子类继承的方式，使用this是不行的！！
             //另外出现IllegalMonitorState错误时，表示同步监视器this与notify、wait的调用对象不一致。
-            synchronized (this) {
+            synchronized (this)/*如果这里使用的是object,那么下面的wait与notify方法也要加上object对象*/ {
                 notify();
                 if (number <= 100) {
 
